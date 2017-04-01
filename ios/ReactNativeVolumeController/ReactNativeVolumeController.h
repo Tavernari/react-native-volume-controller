@@ -6,12 +6,13 @@
 //  Copyright © 2017 Tavernari. All rights reserved.
 //
 
-#import "RCTBridgeModule.h"
+#import <React/RCTBridgeModule.h>
 #import <Foundation/Foundation.h>
 
 #import <UIKit/UIKit.h>
 
-@interface ReactNativeAudioStreaming : NSObject <RCTBridgeModule>
+@interface ReactNativeVolumeController : NSObject <RCTBridgeModule>
 
 - (void)change:(float) volumeValue;
 
+@end
