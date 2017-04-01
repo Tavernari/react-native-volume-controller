@@ -1,6 +1,6 @@
 {
   "name": "react-native-volume-controller",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Volume controller for iOS and Android",
   "main": "index.js",
   "scripts": {
