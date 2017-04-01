@@ -1,0 +1,24 @@
+{
+  "name": "react-native-volume-controller",
+  "version": "1.0.0",
+  "description": "Volume controller for iOS and Android",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tavernari/react-native-volume-controller.git"
+  },
+  "keywords": [
+    "volume",
+    "control",
+    "sound"
+  ],
+  "author": "Victor Carvalho Tavernari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tavernari/react-native-volume-controller/issues"
+  },
+  "homepage": "https://github.com/Tavernari/react-native-volume-controller#readme"
+}
