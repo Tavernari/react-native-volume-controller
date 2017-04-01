@@ -1,94 +1,32 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "react-native-volume-controller@^1.0.8",
-        "scope": null,
-        "escapedName": "react-native-volume-controller",
-        "name": "react-native-volume-controller",
-        "rawSpec": "^1.0.9",
-        "spec": ">=1.0.8 <2.0.0",
-        "type": "range"
-      },
-      "/Users/victorctavernari/Projects/RCNRadio"
-    ]
-  ],
-  "_from": "react-native-volume-controller@>=1.0.8 <2.0.0",
-  "_id": "react-native-volume-controller@1.0.8",
-  "_inCache": true,
-  "_location": "/react-native-volume-controller",
-  "_nodeVersion": "7.3.0",
-  "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/react-native-volume-controller-1.0.8.tgz_1491071557544_0.16777352523058653"
-  },
-  "_npmUser": {
-    "name": "tavernari",
-    "email": "victortavernari@gmail.com"
-  },
-  "_npmVersion": "4.3.0",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "react-native-volume-controller@^1.0.8",
-    "scope": null,
-    "escapedName": "react-native-volume-controller",
-    "name": "react-native-volume-controller",
-    "rawSpec": "^1.0.8",
-    "spec": ">=1.0.8 <2.0.0",
-    "type": "range"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/react-native-volume-controller/-/react-native-volume-controller-1.0.8.tgz",
-  "_shasum": "4ab2aee9e6af7dfca87362c5b51ede96e42fa543",
-  "_shrinkwrap": null,
-  "_spec": "react-native-volume-controller@^1.0.8",
-  "_where": "/Users/victorctavernari/Projects/RCNRadio",
-  "author": {
-    "name": "Victor Carvalho Tavernari"
-  },
-  "bugs": {
-    "url": "https://github.com/Tavernari/react-native-volume-controller/issues"
-  },
-  "dependencies": {},
+
+  "name": "react-native-volume-controller",
+  "version": "1.0.10",
   "description": "Volume controller for iOS and Android",
-  "devDependencies": {
-    "react-native": ">=0.31.0"
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Sorry but have not tests\""
   },
-  "directories": {},
-  "dist": {
-    "shasum": "4ab2aee9e6af7dfca87362c5b51ede96e42fa543",
-    "tarball": "https://registry.npmjs.org/react-native-volume-controller/-/react-native-volume-controller-1.0.8.tgz"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tavernari/react-native-volume-controller.git"
   },
-  "gitHead": "4cda080e60c715d94a893f1e5f4cfcf8daf90260",
-  "homepage": "https://github.com/Tavernari/react-native-volume-controller#readme",
   "keywords": [
     "volume",
     "control",
     "sound"
   ],
+  "author": "Victor Carvalho Tavernari",
   "license": "ISC",
-  "main": "index.js",
-  "maintainers": [
-    {
-      "name": "tavernari",
-      "email": "victortavernari@gmail.com"
-    }
-  ],
-  "name": "react-native-volume-controller",
-  "optionalDependencies": {},
+  "bugs": {
+    "url": "https://github.com/Tavernari/react-native-volume-controller/issues"
+  },
+  "homepage": "https://github.com/Tavernari/react-native-volume-controller#readme",
   "peerDependencies": {
     "react-native": ">=0.31.0"
   },
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Tavernari/react-native-volume-controller.git"
-  },
-  "scripts": {
-    "test": "echo \"Sorry but have not tests\""
-  },
-  "version": "1.0.8"
+  "devDependencies": {
+    "react-native": ">=0.31.0"
+  }
 }
+
