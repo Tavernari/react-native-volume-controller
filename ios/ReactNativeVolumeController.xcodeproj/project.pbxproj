@@ -7,31 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1DF0B7C1E90288A00B9A176 /* ReactNativeVolumeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DF0B7B1E90288A00B9A176 /* ReactNativeVolumeController.m */; };
-		A1DF0B7D1E90288A00B9A176 /* ReactNativeVolumeController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1DF0B7A1E90288A00B9A176 /* ReactNativeVolumeController.h */; };
+		A1DF0BD41E9051ED00B9A176 /* ReactNativeVolumeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DF0BD31E9051ED00B9A176 /* ReactNativeVolumeController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A1DF0B751E90288A00B9A176 /* CopyFiles */ = {
+		A1DF0BC41E9051D800B9A176 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				A1DF0B7D1E90288A00B9A176 /* ReactNativeVolumeController.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A1DF0B771E90288A00B9A176 /* libReactNativeVolumeController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeVolumeController.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1DF0B7A1E90288A00B9A176 /* ReactNativeVolumeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeVolumeController.h; sourceTree = "<group>"; };
-		A1DF0B7B1E90288A00B9A176 /* ReactNativeVolumeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeVolumeController.m; sourceTree = "<group>"; };
+		A1DF0BC61E9051D800B9A176 /* libReactNativeVolumeController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeVolumeController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1DF0BD21E9051ED00B9A176 /* ReactNativeVolumeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReactNativeVolumeController.h; sourceTree = "<group>"; };
+		A1DF0BD31E9051ED00B9A176 /* ReactNativeVolumeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReactNativeVolumeController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A1DF0B741E90288A00B9A176 /* Frameworks */ = {
+		A1DF0BC31E9051D800B9A176 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,97 +39,97 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A1DF0B6E1E90288A00B9A176 = {
+		A1DF0BBD1E9051D800B9A176 = {
 			isa = PBXGroup;
 			children = (
-				A1DF0B791E90288A00B9A176 /* ReactNativeVolumeController */,
-				A1DF0B781E90288A00B9A176 /* Products */,
+				A1DF0BC81E9051D800B9A176 /* ios */,
+				A1DF0BC71E9051D800B9A176 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A1DF0B781E90288A00B9A176 /* Products */ = {
+		A1DF0BC71E9051D800B9A176 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1DF0B771E90288A00B9A176 /* libReactNativeVolumeController.a */,
+				A1DF0BC61E9051D800B9A176 /* libReactNativeVolumeController.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A1DF0B791E90288A00B9A176 /* ReactNativeVolumeController */ = {
+		A1DF0BC81E9051D800B9A176 /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				A1DF0B7A1E90288A00B9A176 /* ReactNativeVolumeController.h */,
-				A1DF0B7B1E90288A00B9A176 /* ReactNativeVolumeController.m */,
+				A1DF0BD21E9051ED00B9A176 /* ReactNativeVolumeController.h */,
+				A1DF0BD31E9051ED00B9A176 /* ReactNativeVolumeController.m */,
 			);
-			path = ReactNativeVolumeController;
+			path = ios;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1DF0B761E90288A00B9A176 /* ReactNativeVolumeController */ = {
+		A1DF0BC51E9051D800B9A176 /* ReactNativeVolumeController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1DF0B801E90288A00B9A176 /* Build configuration list for PBXNativeTarget "ReactNativeVolumeController" */;
+			buildConfigurationList = A1DF0BCF1E9051D800B9A176 /* Build configuration list for PBXNativeTarget "ReactNativeVolumeController" */;
 			buildPhases = (
-				A1DF0B731E90288A00B9A176 /* Sources */,
-				A1DF0B741E90288A00B9A176 /* Frameworks */,
-				A1DF0B751E90288A00B9A176 /* CopyFiles */,
+				A1DF0BC21E9051D800B9A176 /* Sources */,
+				A1DF0BC31E9051D800B9A176 /* Frameworks */,
+				A1DF0BC41E9051D800B9A176 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ReactNativeVolumeController;
-			productName = ReactNativeVolumeController;
-			productReference = A1DF0B771E90288A00B9A176 /* libReactNativeVolumeController.a */;
+			productName = ios;
+			productReference = A1DF0BC61E9051D800B9A176 /* libReactNativeVolumeController.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A1DF0B6F1E90288A00B9A176 /* Project object */ = {
+		A1DF0BBE1E9051D800B9A176 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Tavernari;
 				TargetAttributes = {
-					A1DF0B761E90288A00B9A176 = {
+					A1DF0BC51E9051D800B9A176 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 4REX2KBMNV;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = A1DF0B721E90288A00B9A176 /* Build configuration list for PBXProject "ReactNativeVolumeController" */;
+			buildConfigurationList = A1DF0BC11E9051D800B9A176 /* Build configuration list for PBXProject "ReactNativeVolumeController" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = A1DF0B6E1E90288A00B9A176;
-			productRefGroup = A1DF0B781E90288A00B9A176 /* Products */;
+			mainGroup = A1DF0BBD1E9051D800B9A176;
+			productRefGroup = A1DF0BC71E9051D800B9A176 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1DF0B761E90288A00B9A176 /* ReactNativeVolumeController */,
+				A1DF0BC51E9051D800B9A176 /* ReactNativeVolumeController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A1DF0B731E90288A00B9A176 /* Sources */ = {
+		A1DF0BC21E9051D800B9A176 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1DF0B7C1E90288A00B9A176 /* ReactNativeVolumeController.m in Sources */,
+				A1DF0BD41E9051ED00B9A176 /* ReactNativeVolumeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		A1DF0B7E1E90288A00B9A176 /* Debug */ = {
+		A1DF0BCD1E9051D800B9A176 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -179,7 +177,7 @@
 			};
 			name = Debug;
 		};
-		A1DF0B7F1E90288A00B9A176 /* Release */ = {
+		A1DF0BCE1E9051D800B9A176 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -221,7 +219,7 @@
 			};
 			name = Release;
 		};
-		A1DF0B811E90288A00B9A176 /* Debug */ = {
+		A1DF0BD01E9051D800B9A176 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4REX2KBMNV;
@@ -231,7 +229,7 @@
 			};
 			name = Debug;
 		};
-		A1DF0B821E90288A00B9A176 /* Release */ = {
+		A1DF0BD11E9051D800B9A176 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 4REX2KBMNV;
@@ -244,24 +242,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A1DF0B721E90288A00B9A176 /* Build configuration list for PBXProject "ReactNativeVolumeController" */ = {
+		A1DF0BC11E9051D800B9A176 /* Build configuration list for PBXProject "ReactNativeVolumeController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1DF0B7E1E90288A00B9A176 /* Debug */,
-				A1DF0B7F1E90288A00B9A176 /* Release */,
+				A1DF0BCD1E9051D800B9A176 /* Debug */,
+				A1DF0BCE1E9051D800B9A176 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1DF0B801E90288A00B9A176 /* Build configuration list for PBXNativeTarget "ReactNativeVolumeController" */ = {
+		A1DF0BCF1E9051D800B9A176 /* Build configuration list for PBXNativeTarget "ReactNativeVolumeController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1DF0B811E90288A00B9A176 /* Debug */,
-				A1DF0B821E90288A00B9A176 /* Release */,
+				A1DF0BD01E9051D800B9A176 /* Debug */,
+				A1DF0BD11E9051D800B9A176 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A1DF0B6F1E90288A00B9A176 /* Project object */;
+	rootObject = A1DF0BBE1E9051D800B9A176 /* Project object */;
 }
