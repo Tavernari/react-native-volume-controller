@@ -1,6 +1,6 @@
 {
   "name": "react-native-volume-controller",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Volume controller for iOS and Android",
   "main": "index.js",
   "scripts": {
@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/Tavernari/react-native-volume-controller/issues"
   },
-  "homepage": "https://github.com/Tavernari/react-native-volume-controller#readme"
+  "homepage": "https://github.com/Tavernari/react-native-volume-controller#readme",
+
+  "peerDependencies": {
+    "react-native": ">=0.31.0"
+  },
+  "devDependencies": {
+    "react-native": ">=0.31.0"
+  }
 }
