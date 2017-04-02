@@ -91,6 +91,12 @@ RCT_EXPORT_METHOD(change:(float) volumeValue)
     [slider sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
 
+RCT_EXPORT_METHOD(update)
+{
+    [self change:[[AVAudioSession sharedInstance] outputVolume]];
+    [self sendEventWithNewVolume];
+}
+
 
 
 @end

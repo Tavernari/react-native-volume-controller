@@ -14,5 +14,6 @@
 @interface ReactNativeVolumeController : NSObject <RCTBridgeModule>
 
 - (void)change:(float) volumeValue;
+- (void)update;
 
 @end
