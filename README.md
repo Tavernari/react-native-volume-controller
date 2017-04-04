@@ -1,5 +1,5 @@
 # react-native-volume-controller
-Volume Controller for iOS and Android soon.
+Volume Controller for iOS and Android.
 
 ## First installation step (applied for both iOS & Android)
 
@@ -17,8 +17,24 @@ Volume Controller for iOS and Android soon.
 3. In XCode, in the project navigator, select your project. Add `libReactNativeVolumeController.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)
 
-### Android will be available soon
-s
+### Android
+
+#### Manual installation
+
+1. In Android Studio open `Module Settings` and add a Gradle Project.
+2. Look for `react-native-volume-controller` android folder and link with a Gradle.
+3. Open MyApplication.java from main app and put the ReactNativeVolumeControllerPackage
+
+```java
+ @Override
+    protected List<ReactPackage> getPackages() {
+      return Arrays.<ReactPackage>asList(
+          new MainReactPackage(),
+          new ReactNativeVolumeControllerPackage()
+      );
+    }
+```
+
 ## Usage
 
 ### Using component
@@ -40,7 +56,8 @@ class PlayerUI extends Component {
 
 Use the props style like a [Slider](https://facebook.github.io/react-native/docs/slider.htmllike
 
-## TODO
+## TODO - Need help :P
 
-- [ ] Create interface to change volume with Android
+- [ ] Android Listener to know when press volume button and after dispatch event to react
+- [X] Create interface to change volume with Android
 - [ ] Enable Airplay button when is possible
