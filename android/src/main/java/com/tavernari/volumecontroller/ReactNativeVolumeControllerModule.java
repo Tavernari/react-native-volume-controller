@@ -26,9 +26,24 @@ public class ReactNativeVolumeControllerModule extends ReactContextBaseJavaModul
     public ReactNativeVolumeControllerModule(ReactApplicationContext reactContext) {
       super(reactContext);
       this.context = reactContext;
-      audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-      max_volume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+          }
+
+
+    @Override public String getName() {
+      return "ReactNativeVolumeController";
     }
+
+    @Override public void initialize() {
+      super.initialize();
+
+      try {
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        max_volume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+      } catch (Exception e) {
+        Log.e("ERROR", e.getMessage());
+      }
+    }
+
 
     public void sendEvent(ReactContext reactContext, String eventName, @Nullable WritableMap params) {
       this.context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
