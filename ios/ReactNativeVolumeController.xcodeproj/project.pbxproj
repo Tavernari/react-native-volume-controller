@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1376F53E1EB7BE42004E52EC /* SoundRouteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1376F53D1EB7BE42004E52EC /* SoundRouteButton.m */; };
 		A1DF0B7C1E90288A00B9A176 /* ReactNativeVolumeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DF0B7B1E90288A00B9A176 /* ReactNativeVolumeController.m */; };
 		A1DF0B7D1E90288A00B9A176 /* ReactNativeVolumeController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1DF0B7A1E90288A00B9A176 /* ReactNativeVolumeController.h */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1376F53C1EB7BE42004E52EC /* SoundRouteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundRouteButton.h; sourceTree = "<group>"; };
+		1376F53D1EB7BE42004E52EC /* SoundRouteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundRouteButton.m; sourceTree = "<group>"; };
 		A1DF0B771E90288A00B9A176 /* libReactNativeVolumeController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeVolumeController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DF0B7A1E90288A00B9A176 /* ReactNativeVolumeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeVolumeController.h; sourceTree = "<group>"; };
 		A1DF0B7B1E90288A00B9A176 /* ReactNativeVolumeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeVolumeController.m; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 			children = (
 				A1DF0B7A1E90288A00B9A176 /* ReactNativeVolumeController.h */,
 				A1DF0B7B1E90288A00B9A176 /* ReactNativeVolumeController.m */,
+				1376F53C1EB7BE42004E52EC /* SoundRouteButton.h */,
+				1376F53D1EB7BE42004E52EC /* SoundRouteButton.m */,
 			);
 			path = ReactNativeVolumeController;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1DF0B7C1E90288A00B9A176 /* ReactNativeVolumeController.m in Sources */,
+				1376F53E1EB7BE42004E52EC /* SoundRouteButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

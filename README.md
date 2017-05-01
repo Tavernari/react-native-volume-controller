@@ -54,10 +54,10 @@ class PlayerUI extends Component {
 
 ### Style props
 
-Use the props style like a [Slider](https://facebook.github.io/react-native/docs/slider.htmllike
+Use the props style like a [Slider](https://facebook.github.io/react-native/docs/slider.htmllike)
 
 ## TODO - Need help :P
 
 - [ ] Android Listener to know when press volume button and after dispatch event to react
 - [X] Create interface to change volume with Android
-- [ ] Enable Airplay button when is possible
+- [X] Enable Airplay button when is possible

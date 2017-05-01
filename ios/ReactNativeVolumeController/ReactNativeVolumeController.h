@@ -15,5 +15,4 @@
 
 - (void)change:(float) volumeValue;
 - (void)update;
-
 @end

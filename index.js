@@ -1,12 +1,13 @@
 import React, { Component }  from 'react';
-import {NativeModules, DeviceEventEmitter, Slider} from 'react-native';
+import { View, NativeModules, DeviceEventEmitter, Slider, requireNativeComponent } from 'react-native';
 
 const {ReactNativeVolumeController} = NativeModules;
+
 
 export default class SliderVolumeController extends Component {
     constructor(props) {
         super(props);
-        this.state = {volume_value:0.8};
+        this.state = {volume_value:0.8, button_width:0};
     }
 
     componentDidMount() {
@@ -20,11 +21,17 @@ export default class SliderVolumeController extends Component {
     }
 
     render() {
-      return(<Slider {...this.props}
-        value={this.state.volume_value}
-        onValueChange={(value)=>ReactNativeVolumeController.change(value)}
-        />);
+
+        const soundRouteButton = Platform.OS === 'ios' ? <SoundRouteButton /> : null
+
+      return(<View>
+              <Slider {...this.props} value={this.state.volume_value} onValueChange={(value)=>ReactNativeVolumeController.change(value)}/>
+              {soundRouteButton}
+          </View>
+        );
     }
 }
+
+var SoundRouteButton = requireNativeComponent('SoundRouteButton', SliderVolumeController);
 
 export {SliderVolumeController, ReactNativeVolumeController}

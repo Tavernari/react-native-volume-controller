@@ -6,10 +6,10 @@
 //  Copyright © 2017 Tavernari. All rights reserved.
 //
 
-#import <React/RCTBridgeModule.h>
-#import <React/RCTEventDispatcher.h>
 #import "ReactNativeVolumeController.h"
 
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventDispatcher.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
@@ -24,7 +24,7 @@
 -(id) init{
     self = [super init];
     if (self) {
-        CGRect frame = CGRectMake(20, -100, 10, 10);
+        CGRect frame = CGRectMake(0, 0, 40, 40);
         volumeView = [[MPVolumeView alloc] initWithFrame:frame];
         UIWindow *window = [[UIApplication sharedApplication] keyWindow];
         UIView *topView = window.rootViewController.view;
@@ -32,7 +32,7 @@
         [volumeView sizeToFit];
         [volumeView setShowsVolumeSlider:true];
         [volumeView setShowsRouteButton:true];
-        volumeView.hidden = true;
+        volumeView.hidden = false;
         [volumeView setAlpha:0.0];
         
         for (UIView *view in [volumeView subviews]){
@@ -50,6 +50,7 @@
     }
     return self;
 }
+
 
 - (void)removeVolumeChangeObserver
 {
