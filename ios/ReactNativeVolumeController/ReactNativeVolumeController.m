@@ -17,6 +17,7 @@
     BOOL initialized;
     MPVolumeView* volumeView;
     UISlider* slider;
+    NSNotificationCenter *center;
 }
 
 @synthesize bridge = _bridge;
@@ -34,7 +35,7 @@
         [volumeView setShowsRouteButton:true];
         volumeView.hidden = false;
         [volumeView setAlpha:0.0];
-        
+
         for (UIView *view in [volumeView subviews]){
             if ([view isKindOfClass:[UISlider class]]){
                 slider = (UISlider*)view;
@@ -44,12 +45,46 @@
                 break;
             }
         }
-        
+
         [[AVAudioSession sharedInstance] addObserver:self forKeyPath:@"outputVolume" options:0 context:nil];
+
+        center = [NSNotificationCenter defaultCenter];
+        [center addObserver:self selector:@selector(wirelessRouteActive:)
+                       name:MPVolumeViewWirelessRouteActiveDidChangeNotification object:nil];
+
+        [center addObserver:self selector:@selector(wirelessAvailable:)
+                       name:MPVolumeViewWirelessRoutesAvailableDidChangeNotification object:nil];
 
     }
     return self;
 }
+
+
+
+- (void)wirelessRouteActive:(NSNotification*)aNotification
+{
+    MPVolumeView* volumeView = (MPVolumeView*)aNotification.object;
+
+    NSLog(@"%s: %@",__FUNCTION__,aNotification);
+    if(volumeView.isWirelessRouteActive) {
+        [self.bridge.eventDispatcher sendDeviceEventWithName:@"SoundRouteButtonWillAppear"
+                                                        body:@{@"volume":@"YES"}];
+        NSLog(@"airplaying");
+    } else {
+        [self.bridge.eventDispatcher sendDeviceEventWithName:@"SoundRouteButtonWillDisappear"
+                                                        body:@{@"volume":@"NO"}];
+        NSLog(@"not airplaying");
+    }
+}
+
+-(void)wirelessAvailable:(NSNotification*)aNotification
+{
+    [self.bridge.eventDispatcher sendDeviceEventWithName:@"SoundRouteButtonWillAppear"
+                                                    body:@{@"volume":@"YES"}];
+    NSLog(@"airplay status");
+    NSLog(@"%s: %@",__FUNCTION__,aNotification);
+}
+
 
 
 - (void)removeVolumeChangeObserver
