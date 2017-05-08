@@ -1,8 +1,7 @@
 import React, { Component }  from 'react';
 import { View, NativeModules, DeviceEventEmitter, Slider, requireNativeComponent, Image, Platform, Dimensions, Text } from 'react-native';
 
-const {ReactNativeVolumeController} = NativeModules;
-
+const ReactNativeVolumeController = NativeModules.ReactNativeVolumeController;
 
 export default class SliderVolumeController extends Component {
     constructor(props) {
@@ -10,24 +9,13 @@ export default class SliderVolumeController extends Component {
         this.state = {volume_value:0.8, has_button_route:false};
     }
 
-    componentDidMount() {
-      DeviceEventEmitter.addListener(
+  componentDidMount() {
+    DeviceEventEmitter.addListener(
         'VolumeControllerValueUpdatedEvent', (evt) => {
+            console.log("update view volume "+evt.volume);
             this.setState({volume_value:evt.volume});
         }
       );
-
-        DeviceEventEmitter.addListener(
-            'SoundRouteButtonWillAppear', (evt) => {
-                this.setState({has_button_route:true});
-            }
-        );
-
-        DeviceEventEmitter.addListener(
-            'SoundRouteButtonWillDisappear', (evt) => {
-                this.setState({has_button_route:false});
-            }
-        );
 
       ReactNativeVolumeController.update();
     }
@@ -56,4 +44,4 @@ export default class SliderVolumeController extends Component {
 
 var SoundRouteButton = requireNativeComponent('ReactNativeVolumeController', null);
 
-export {SliderVolumeController, ReactNativeVolumeController}
+export {SliderVolumeController, ReactNativeVolumeController, SoundRouteButton}

@@ -6,14 +6,12 @@
 //  Copyright © 2017 Tavernari. All rights reserved.
 //
 
-#import <React/RCTBridgeModule.h>
 #import <React/RCTViewManager.h>
 #import <Foundation/Foundation.h>
 
 #import <UIKit/UIKit.h>
 
-@interface ReactNativeVolumeController : RCTViewManager <RCTBridgeModule>
-
+@interface ReactNativeVolumeController : RCTViewManager
 - (void)change:(float) volumeValue;
 - (void)update;
 @end

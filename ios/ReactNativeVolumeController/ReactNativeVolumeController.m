@@ -8,8 +8,6 @@
 
 #import "ReactNativeVolumeController.h"
 
-#import <React/RCTBridgeModule.h>
-#import <React/RCTEventDispatcher.h>
 #import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 
@@ -20,31 +18,6 @@
     UIButton* airplayButton;
     NSNotificationCenter *center;
     BOOL isAirplayEnable;
-}
-
-@synthesize bridge = _bridge;
-
--(id) init{
-    self = [super init];
-    if (self) {
-        
-        [[AVAudioSession sharedInstance] addObserver:self forKeyPath:@"outputVolume" options:0 context:nil];
-    }
-    return self;
-}
-
-
-- (void)removeVolumeChangeObserver
-{
-    @try
-    {
-        [[AVAudioSession sharedInstance] removeObserver:self forKeyPath:@"outputVolume"];
-    }
-    
-    @catch(id anException)
-    {
-        
-    }
 }
 
 - (void)sendEventWithNewVolume
@@ -101,6 +74,9 @@ RCT_EXPORT_METHOD(update)
             break;
         }
     }
+    
+    [[AVAudioSession sharedInstance] addObserver:self forKeyPath:@"outputVolume" options:0 context:nil];
+    
     return volumeView;
 }
 
