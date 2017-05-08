@@ -7,11 +7,12 @@
 //
 
 #import <React/RCTBridgeModule.h>
+#import <React/RCTViewManager.h>
 #import <Foundation/Foundation.h>
 
 #import <UIKit/UIKit.h>
 
-@interface ReactNativeVolumeController : NSObject <RCTBridgeModule>
+@interface ReactNativeVolumeController : RCTViewManager <RCTBridgeModule>
 
 - (void)change:(float) volumeValue;
 - (void)update;

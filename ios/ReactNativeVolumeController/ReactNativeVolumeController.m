@@ -17,7 +17,9 @@
     BOOL initialized;
     MPVolumeView* volumeView;
     UISlider* slider;
+    UIButton* airplayButton;
     NSNotificationCenter *center;
+    BOOL isAirplayEnable;
 }
 
 @synthesize bridge = _bridge;
@@ -25,66 +27,19 @@
 -(id) init{
     self = [super init];
     if (self) {
-        CGRect frame = CGRectMake(0, 0, 40, 40);
-        volumeView = [[MPVolumeView alloc] initWithFrame:frame];
-        UIWindow *window = [[UIApplication sharedApplication] keyWindow];
-        UIView *topView = window.rootViewController.view;
-        [topView addSubview:volumeView];
-        [volumeView sizeToFit];
-        [volumeView setShowsVolumeSlider:true];
-        [volumeView setShowsRouteButton:true];
-        volumeView.hidden = false;
-        [volumeView setAlpha:0.0];
-
-        for (UIView *view in [volumeView subviews]){
-            if ([view isKindOfClass:[UISlider class]]){
-                slider = (UISlider*)view;
-                slider.continuous = NO;
-                float outputVolume = [AVAudioSession sharedInstance].outputVolume;
-                [slider setValue:outputVolume animated:NO];
-                break;
-            }
-        }
-
+        
         [[AVAudioSession sharedInstance] addObserver:self forKeyPath:@"outputVolume" options:0 context:nil];
-
+        
         center = [NSNotificationCenter defaultCenter];
         [center addObserver:self selector:@selector(wirelessRouteActive:)
                        name:MPVolumeViewWirelessRouteActiveDidChangeNotification object:nil];
-
+        
         [center addObserver:self selector:@selector(wirelessAvailable:)
                        name:MPVolumeViewWirelessRoutesAvailableDidChangeNotification object:nil];
 
     }
     return self;
 }
-
-
-
-- (void)wirelessRouteActive:(NSNotification*)aNotification
-{
-    MPVolumeView* volumeView = (MPVolumeView*)aNotification.object;
-
-    NSLog(@"%s: %@",__FUNCTION__,aNotification);
-    if(volumeView.isWirelessRouteActive) {
-        [self.bridge.eventDispatcher sendDeviceEventWithName:@"SoundRouteButtonWillAppear"
-                                                        body:@{@"volume":@"YES"}];
-        NSLog(@"airplaying");
-    } else {
-        [self.bridge.eventDispatcher sendDeviceEventWithName:@"SoundRouteButtonWillDisappear"
-                                                        body:@{@"volume":@"NO"}];
-        NSLog(@"not airplaying");
-    }
-}
-
--(void)wirelessAvailable:(NSNotification*)aNotification
-{
-    [self.bridge.eventDispatcher sendDeviceEventWithName:@"SoundRouteButtonWillAppear"
-                                                    body:@{@"volume":@"YES"}];
-    NSLog(@"airplay status");
-    NSLog(@"%s: %@",__FUNCTION__,aNotification);
-}
-
 
 
 - (void)removeVolumeChangeObserver
@@ -131,6 +86,30 @@ RCT_EXPORT_METHOD(update)
 {
     [self change:[[AVAudioSession sharedInstance] outputVolume]];
     [self sendEventWithNewVolume];
+}
+
+
+-(UIView *) view{
+    volumeView = [[MPVolumeView alloc] init];
+    [volumeView sizeToFit];
+    [volumeView setShowsVolumeSlider:false];
+    [volumeView setShowsRouteButton:true];
+    
+    for (UIView *view in [volumeView subviews]){
+        if ([view isKindOfClass:[UISlider class]]){
+            slider = (UISlider*)view;
+            slider.continuous = NO;
+            float outputVolume = [AVAudioSession sharedInstance].outputVolume;
+            [slider setValue:outputVolume animated:NO];
+            break;
+        }
+        
+        if ([view isKindOfClass:[UIButton class]]){
+            airplayButton = (UIButton*)view;
+            break;
+        }
+    }
+    return volumeView;
 }
 
 

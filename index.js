@@ -11,11 +11,11 @@ export default class SliderVolumeController extends Component {
     }
 
     componentDidMount() {
-        DeviceEventEmitter.addListener(
-            'VolumeControllerValueUpdatedEvent', (evt) => {
-                this.setState({volume_value:evt.volume});
-            }
-        );
+      DeviceEventEmitter.addListener(
+        'VolumeControllerValueUpdatedEvent', (evt) => {
+            this.setState({volume_value:evt.volume});
+        }
+      );
 
         DeviceEventEmitter.addListener(
             'SoundRouteButtonWillAppear', (evt) => {
@@ -29,7 +29,7 @@ export default class SliderVolumeController extends Component {
             }
         );
 
-        ReactNativeVolumeController.update();
+      ReactNativeVolumeController.update();
     }
 
     render() {
@@ -38,22 +38,22 @@ export default class SliderVolumeController extends Component {
         let sliderWidth = viewWidth;
         let buttonWidth = sliderWidth*0.15
         let soundRouteButton = null;
-        if(this.state.has_button_route && Platform.OS === 'ios'){
+        if( Platform.OS === 'ios'){
             sliderWidth = viewWidth*0.85
             soundRouteButton = <SoundRouteButton style={{width:buttonWidth, top:3}} />
         }
 
         return(<View style={[this.props.style, {marginLeft:10, marginRight:10,flex:1, flexDirection:"row", width:viewWidth,
-                alignItems:'center',
-                justifyContent:'center'}]}>
-                <Slider {...this.props} style={[{width:sliderWidth}]} value={this.state.volume_value} onValueChange={(value)=>ReactNativeVolumeController.change(value)}/>
-                {soundRouteButton}
+              alignItems:'center',
+              justifyContent:'center'}]}>
+              <Slider {...this.props} style={[{width:sliderWidth}]} value={this.state.volume_value} onValueChange={(value)=>ReactNativeVolumeController.change(value)}/>
+              {soundRouteButton}
 
-            </View>
+          </View>
         );
     }
 }
 
-var SoundRouteButton = requireNativeComponent('SoundRouteButton', SliderVolumeController);
+var SoundRouteButton = requireNativeComponent('ReactNativeVolumeController', null);
 
 export {SliderVolumeController, ReactNativeVolumeController}
