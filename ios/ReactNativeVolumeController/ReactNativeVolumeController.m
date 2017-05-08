@@ -29,14 +29,6 @@
     if (self) {
         
         [[AVAudioSession sharedInstance] addObserver:self forKeyPath:@"outputVolume" options:0 context:nil];
-        
-        center = [NSNotificationCenter defaultCenter];
-        [center addObserver:self selector:@selector(wirelessRouteActive:)
-                       name:MPVolumeViewWirelessRouteActiveDidChangeNotification object:nil];
-        
-        [center addObserver:self selector:@selector(wirelessAvailable:)
-                       name:MPVolumeViewWirelessRoutesAvailableDidChangeNotification object:nil];
-
     }
     return self;
 }
