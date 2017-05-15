@@ -1,10 +1,11 @@
-package com.tavernari.volumecontroller
+package com.tavernari.volumecontroller;
 
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
@@ -17,16 +18,18 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
 import android.media.AudioManager;
+import android.view.KeyEvent;
 
 public class ReactNativeVolumeControllerModule extends ReactContextBaseJavaModule {
 
     private ReactApplicationContext context;
-    private float max_volume = 0.0;
+    private float max_volume = (float) 0.0;
+    private AudioManager audioManager;
 
     public ReactNativeVolumeControllerModule(ReactApplicationContext reactContext) {
       super(reactContext);
       this.context = reactContext;
-          }
+    }
 
 
     @Override public String getName() {
@@ -37,7 +40,7 @@ public class ReactNativeVolumeControllerModule extends ReactContextBaseJavaModul
       super.initialize();
 
       try {
-        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        audioManager = (AudioManager) this.context.getSystemService(Context.AUDIO_SERVICE);
         max_volume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
       } catch (Exception e) {
         Log.e("ERROR", e.getMessage());
@@ -51,14 +54,28 @@ public class ReactNativeVolumeControllerModule extends ReactContextBaseJavaModul
     }//VolumeControllerValueUpdatedEvent
 
     @ReactMethod public void change(float volume) {
-      audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,volume*max_volume, 0);
+      audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, (int) (volume*max_volume), 1);
     }
+
+    /*public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_VOLUME_UP:
+                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                        AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI);
+                return true;
+            case KeyEvent.KEYCODE_VOLUME_DOWN:
+                audioManager.adjustStreamVolume(AudioManager.STREAM_MUSIC,
+                        AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI);
+                return true;
+            default:
+                return false;
+        }
+    }*/
 
     @ReactMethod public void update() {
       float volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-      audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,volume, 0);
       WritableMap params = Arguments.createMap();
-      params.putString("volume", volume);
-      sendEvent(this.getReactApplicationContextModule(), "streamingOpen", params);
+      params.putString("volume", String.valueOf(volume));
+      sendEvent(this.context, "streamingOpen", params);
     }
 }
