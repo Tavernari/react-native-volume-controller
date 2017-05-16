@@ -54,7 +54,7 @@ public class ReactNativeVolumeControllerModule extends ReactContextBaseJavaModul
     }//VolumeControllerValueUpdatedEvent
 
     @ReactMethod public void change(float volume) {
-      audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, (int) (volume*max_volume), 1);
+      audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, (int) (volume*max_volume), 0);
     }
 
     /*public boolean onKeyDown(int keyCode, KeyEvent event) {
