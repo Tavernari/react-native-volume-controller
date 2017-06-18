@@ -12,6 +12,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ReactNativeVolumeController : RCTViewManager
-- (void)change:(float) volumeValue;
-- (void)update;
+
 @end

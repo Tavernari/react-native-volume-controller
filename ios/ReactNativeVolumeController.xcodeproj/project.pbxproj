@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13F99C961EF6226F0088E195 /* VolumeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F99C951EF6226F0088E195 /* VolumeSlider.m */; };
 		A1DF0B7C1E90288A00B9A176 /* ReactNativeVolumeController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1DF0B7B1E90288A00B9A176 /* ReactNativeVolumeController.m */; };
 		A1DF0B7D1E90288A00B9A176 /* ReactNativeVolumeController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1DF0B7A1E90288A00B9A176 /* ReactNativeVolumeController.h */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		13F99C941EF6226F0088E195 /* VolumeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VolumeSlider.h; sourceTree = "<group>"; };
+		13F99C951EF6226F0088E195 /* VolumeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VolumeSlider.m; sourceTree = "<group>"; };
 		A1DF0B771E90288A00B9A176 /* libReactNativeVolumeController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libReactNativeVolumeController.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1DF0B7A1E90288A00B9A176 /* ReactNativeVolumeController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeVolumeController.h; sourceTree = "<group>"; };
 		A1DF0B7B1E90288A00B9A176 /* ReactNativeVolumeController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeVolumeController.m; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 			children = (
 				A1DF0B7A1E90288A00B9A176 /* ReactNativeVolumeController.h */,
 				A1DF0B7B1E90288A00B9A176 /* ReactNativeVolumeController.m */,
+				13F99C941EF6226F0088E195 /* VolumeSlider.h */,
+				13F99C951EF6226F0088E195 /* VolumeSlider.m */,
 			);
 			path = ReactNativeVolumeController;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13F99C961EF6226F0088E195 /* VolumeSlider.m in Sources */,
 				A1DF0B7C1E90288A00B9A176 /* ReactNativeVolumeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
