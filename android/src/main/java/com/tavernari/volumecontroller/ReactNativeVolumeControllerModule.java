@@ -73,9 +73,9 @@ public class ReactNativeVolumeControllerModule extends ReactContextBaseJavaModul
     }*/
 
     @ReactMethod public void update() {
-      float volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+      float volume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)/max_volume;
       WritableMap params = Arguments.createMap();
       params.putString("volume", String.valueOf(volume));
-      sendEvent(this.context, "streamingOpen", params);
+      sendEvent(this.context, "VolumeControllerValueUpdatedEvent", params);
     }
 }
