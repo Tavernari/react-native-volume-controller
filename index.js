@@ -84,7 +84,7 @@ export default class SliderVolumeController extends Component {
           
             slider = <ReactNativeVolumeControllerSlider {...rest}
                                                         onValueChange={onValueChange}
-                                                        style={[styles.slider, style, {width:sliderWidth}]}/>
+                                                        style={[styles.slider, {width:sliderWidth}, style]}/>
         }
 
         return(<View style={[this.props.style, {marginLeft:10, marginRight:10,flex:1, flexDirection:"row", width:viewWidth,
