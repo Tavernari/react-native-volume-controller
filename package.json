@@ -8,19 +8,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tavernari/react-native-volume-controller.git"
+    "url": "git+https://github.com/parinha/react-native-volume-controller.git"
   },
-  "keywords": [
-    "volume",
-    "control",
-    "sound"
-  ],
+  "keywords": ["volume", "control", "sound"],
   "author": "Victor Carvalho Tavernari",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Tavernari/react-native-volume-controller/issues"
   },
-  "homepage": "https://github.com/Tavernari/react-native-volume-controller#readme",
+  "homepage":
+    "https://github.com/Tavernari/react-native-volume-controller#readme",
   "peerDependencies": {
     "react-native": ">=0.31.0"
   },
