@@ -70,6 +70,7 @@ export default class SliderVolumeController extends Component {
           (value)=>{
             this.isDragging = true;
             ReactNativeVolumeController.change(value);
+            ReactNativeVolumeController.update();
             setTimeout(()=>{
               this.isDragging = false;
             }, 500);
