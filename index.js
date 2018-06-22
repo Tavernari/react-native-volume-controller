@@ -70,6 +70,7 @@ export default class SliderVolumeController extends Component {
           (value)=>{
             this.isDragging = true;
             ReactNativeVolumeController.change(value);
+            ReactNativeVolumeController.update();
             setTimeout(()=>{
               this.isDragging = false;
             }, 500);
@@ -78,7 +79,7 @@ export default class SliderVolumeController extends Component {
         if( Platform.OS === 'ios' ){
           const onValueChange = this.props.onValueChange && ((event: Event) => {
               this.props.onValueChange &&
-              this.props.onValueChange(event.nativeEvent.value);
+              this.props.onValueChange(event);
             });
 
           const { style, ...rest } = this.props;
